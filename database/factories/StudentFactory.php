@@ -20,8 +20,8 @@ class StudentFactory extends Factory
             //
             
             'name' => $this->faker->company(),
-            'address' => $this->faker->cityName(),
-            'mobile' => $this->faker->cityName()
+            'address' => $this->faker->realText(),
+            'mobile' => $this->faker->company()
             
         ];
     }
