@@ -18,7 +18,7 @@ class StudentsController extends Controller
 
         $students = Student::get();
         
-        var_dump($students);
+        return view('home', compact('students'));
     }
 
     /**
