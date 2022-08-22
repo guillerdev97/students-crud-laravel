@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [StudentsController::class, 'index'])->name('home');
+Route::delete('/delete/{id}', [StudentsController::class, 'destroy'])->name('delete');

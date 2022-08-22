@@ -29,4 +29,17 @@ class CrudTest extends TestCase
             ->assertViewIs('home');
         $response->assertSee($student->name);
     }
+
+    public function test_delete_crud()
+    {
+        $this->withExceptionHandling();
+
+        $student = Student::factory()->create();
+
+        $this->assertCount(1, Student::all());
+
+        $response = $this->delete(route('delete', $student->id));
+
+        $this->assertCount(0, Student::all());
+    }
 }
