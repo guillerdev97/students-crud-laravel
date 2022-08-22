@@ -85,5 +85,10 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
+
+        $student = Student::find($id)->delete();
+
+        return redirect()->route('home')
+            ->with('success', 'Event deleted successfully');
     }
 }
