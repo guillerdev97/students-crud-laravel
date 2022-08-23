@@ -15,4 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [StudentsController::class, 'index'])->name('home');
+
+// delete
 Route::delete('/delete/{id}', [StudentsController::class, 'destroy'])->name('delete');
+
+// create
+Route::get('/create', [StudentsController::class, 'create'])->name('createStudent');
+Route::post('/', [studentsController::class, 'store'])->name('store');
+
+// update
+Route::get('/edit/{id}', [StudentsController::class, 'edit'])->name('editStudent');
+Route::patch('/student/{id}', [studentsController::class, 'update'])->name('updateStudent');

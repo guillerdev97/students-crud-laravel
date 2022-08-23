@@ -29,6 +29,8 @@ class StudentsController extends Controller
     public function create()
     {
         //
+
+        return view('create');
     }
 
     /**
@@ -40,6 +42,14 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $student = Student::create([
+            'name' => $request->newname,
+            'address' => $request->newaddress,
+            'mobile' => $request->newmobile,
+        ]);
+
+        return redirect()->route('home');
     }
 
     /**
@@ -62,6 +72,10 @@ class StudentsController extends Controller
     public function edit($id)
     {
         //
+
+        $student = Student::find($id);
+
+        return view('edit', compact('student'));
     }
 
     /**
@@ -74,6 +88,15 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $student = Student::whereId($id);
+        $student->update([
+            'name' => $request->newname,
+            'address' => $request->newaddress,
+            'mobile' => $request->newmobile,
+        ]);
+
+        return redirect()->route('home');
     }
 
     /**
