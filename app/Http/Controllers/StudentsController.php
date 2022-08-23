@@ -43,11 +43,15 @@ class StudentsController extends Controller
     {
         //
 
-        $student = Student::create([
+        $student = request()->except('_token');
+
+        /* $student = Student::create([
             'name' => $request->newname,
             'address' => $request->newaddress,
             'mobile' => $request->newmobile,
-        ]);
+        ]); */
+
+        Student::create($student);
 
         return redirect()->route('home');
     }
@@ -73,9 +77,9 @@ class StudentsController extends Controller
     {
         //
 
-        $student = Student::find($id);
+      /*   $student = Student::find($id);
 
-        return view('edit', compact('student'));
+        return view('edit', compact('student')); */
     }
 
     /**
@@ -88,6 +92,7 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
+       /*  $request = Student::all()->except()
 
         $student = Student::whereId($id);
         $student->update([
@@ -96,7 +101,7 @@ class StudentsController extends Controller
             'mobile' => $request->newmobile,
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home'); */
     }
 
     /**
