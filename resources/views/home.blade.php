@@ -2,6 +2,8 @@
 
 @section('content')
 
+<a href="{{ route('createStudent') }}">Add new student</a>
+
 <table class="table">
     <thead>
         <tr>

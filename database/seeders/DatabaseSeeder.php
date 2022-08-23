@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         
-        Student::factory()->create(['name' => 'Guiller', 'address' => 'Mieres', 'mobile' => '6785463210']);
-        Student::factory(5)->create();
+        Student::factory()->create(['name' => 'Pedro', 'address' => 'Mieres', 'mobile' => '6785463210']);
+       /*  Student::factory(5)->create(); */
     }
 }
